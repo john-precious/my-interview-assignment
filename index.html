@@ -1,0 +1,1475 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Dr. Maya Reynolds, Licensed Clinical Psychologist in Santa Monica, CA. Specializing in anxiety therapy, trauma treatment, and burnout recovery for high-achieving professionals.">
+    <meta name="keywords" content="therapist Santa Monica, psychologist Santa Monica CA, anxiety therapy, trauma therapy, EMDR therapy, burnout treatment, therapy for professionals, California psychologist">
+    <title>Dr. Maya Reynolds, PsyD | Anxiety & Trauma Therapy in Santa Monica, CA</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --navy: #1A3A52;
+            --sage-green: #7A9B8E;
+            --warm-beige: #F4EFE6;
+            --cream: #FDFBF7;
+            --terracotta: #C17C5E;
+            --charcoal: #2D2D2D;
+            --soft-grey: #6B6B6B;
+        }
+
+        body {
+            font-family: 'Source Sans 3', sans-serif;
+            color: var(--charcoal);
+            line-height: 1.7;
+            background: var(--cream);
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 500;
+            line-height: 1.3;
+        }
+
+        /* Navigation */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.8rem 6%;
+            background: var(--cream);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.03);
+            transition: all 0.3s ease;
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--navy);
+            z-index: 1001;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 3rem;
+            list-style: none;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--charcoal);
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: color 0.3s;
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--sage-green);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--sage-green);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        /* Hamburger Menu */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            z-index: 1001;
+            padding: 5px;
+        }
+
+        .hamburger span {
+            width: 28px;
+            height: 3px;
+            background: var(--navy);
+            margin: 3px 0;
+            transition: all 0.3s ease;
+            border-radius: 3px;
+        }
+
+        .hamburger.active span:nth-child(1) {
+            transform: rotate(45deg) translate(8px, 8px);
+        }
+
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(8px, -8px);
+        }
+
+        /* Mobile Menu Overlay */
+        .mobile-menu-overlay {
+            position: fixed;
+            top: 0;
+            right: -100%;
+            width: 100%;
+            height: 100vh;
+            background: var(--cream);
+            z-index: 999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: right 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        }
+
+        .mobile-menu-overlay.active {
+            right: 0;
+        }
+
+        .mobile-menu-overlay .nav-links {
+            flex-direction: column;
+            gap: 2rem;
+            text-align: center;
+        }
+
+        .mobile-menu-overlay .nav-links a {
+            font-size: 1.5rem;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.3s ease;
+        }
+
+        .mobile-menu-overlay.active .nav-links a {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .mobile-menu-overlay.active .nav-links a:nth-child(1) { transition-delay: 0.1s; }
+        .mobile-menu-overlay.active .nav-links a:nth-child(2) { transition-delay: 0.2s; }
+        .mobile-menu-overlay.active .nav-links a:nth-child(3) { transition-delay: 0.3s; }
+
+        /* Hero Section */
+        .hero {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            align-items: center;
+            padding: 5rem 6%;
+            background: linear-gradient(135deg, var(--warm-beige) 0%, var(--cream) 100%);
+            min-height: 85vh;
+            gap: 4rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -10%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(122, 155, 142, 0.1) 0%, transparent 70%);
+            border-radius: 50%;
+            animation: float 8s ease-in-out infinite;
+        }
+
+        .hero-content {
+            animation: fadeInUp 1s ease-out;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-content .subtitle {
+            font-size: 0.95rem;
+            color: var(--sage-green);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 1rem;
+            animation: fadeInUp 1s ease-out 0.2s backwards;
+        }
+
+        .hero-content h1 {
+            font-size: 3.8rem;
+            line-height: 1.15;
+            margin-bottom: 1.5rem;
+            color: var(--navy);
+            font-weight: 600;
+            animation: fadeInUp 1s ease-out 0.3s backwards;
+        }
+
+        .hero-content .location {
+            font-size: 1.05rem;
+            color: var(--soft-grey);
+            margin-bottom: 2rem;
+            font-weight: 400;
+            animation: fadeInUp 1s ease-out 0.4s backwards;
+        }
+
+        .hero-content p {
+            font-size: 1.1rem;
+            color: var(--charcoal);
+            margin-bottom: 2.5rem;
+            line-height: 1.8;
+            max-width: 550px;
+            animation: fadeInUp 1s ease-out 0.5s backwards;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            background: var(--navy);
+            color: white;
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            border: 2px solid var(--navy);
+            position: relative;
+            overflow: hidden;
+            animation: fadeInUp 1s ease-out 0.6s backwards;
+        }
+
+        .cta-button::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.3);
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
+        }
+
+        .cta-button:hover::before {
+            width: 300px;
+            height: 300px;
+        }
+
+        .cta-button:hover {
+            background: transparent;
+            color: var(--navy);
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 15px 35px rgba(26, 58, 82, 0.2);
+        }
+
+        .hero-image-container {
+            position: relative;
+            animation: fadeInRight 1.2s ease-out;
+            z-index: 2;
+        }
+
+        .hero-image-container::before {
+            content: '';
+            position: absolute;
+            top: -20px;
+            right: -20px;
+            width: 100%;
+            height: 100%;
+            border: 3px solid var(--sage-green);
+            border-radius: 2px;
+            z-index: -1;
+            animation: slideInDiagonal 1.5s ease-out;
+        }
+
+        .hero-image {
+            width: 100%;
+            height: 600px;
+            object-fit: cover;
+            border-radius: 2px;
+            box-shadow: 0 30px 80px rgba(0,0,0,0.15);
+            transition: transform 0.6s ease, box-shadow 0.6s ease;
+            animation: zoomIn 1.2s ease-out;
+        }
+
+        .hero-image:hover {
+            transform: scale(1.02);
+            box-shadow: 0 40px 100px rgba(0,0,0,0.25);
+        }
+
+        /* Intro Section */
+        .intro-section {
+            padding: 6rem 6%;
+            background: var(--cream);
+            text-align: center;
+        }
+
+        .intro-section h2 {
+            font-size: 2.8rem;
+            margin-bottom: 2rem;
+            color: var(--navy);
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+
+        .intro-section h2.animate {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .intro-section p {
+            max-width: 800px;
+            margin: 0 auto 1.5rem;
+            color: var(--soft-grey);
+            font-size: 1.05rem;
+            line-height: 1.9;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+
+        .intro-section p.animate {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .intro-section p:nth-child(2) { transition-delay: 0.2s; }
+        .intro-section p:nth-child(3) { transition-delay: 0.4s; }
+
+        /* Services Section */
+        .services {
+            padding: 7rem 6%;
+            background: var(--warm-beige);
+        }
+
+        .services-header {
+            text-align: center;
+            margin-bottom: 5rem;
+        }
+
+        .services-header h2 {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            color: var(--navy);
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+
+        .services-header h2.animate {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .services-header p {
+            font-size: 1.05rem;
+            color: var(--soft-grey);
+            max-width: 700px;
+            margin: 0 auto;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease 0.2s;
+        }
+
+        .services-header p.animate {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 3rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .service-card {
+            background: white;
+            padding: 0;
+            border-radius: 2px;
+            transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            overflow: hidden;
+            opacity: 0;
+            transform: translateY(50px) scale(0.95);
+            position: relative;
+        }
+
+        .service-card.animate {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+        }
+
+        .service-card:nth-child(1) { transition-delay: 0.1s; }
+        .service-card:nth-child(2) { transition-delay: 0.3s; }
+        .service-card:nth-child(3) { transition-delay: 0.5s; }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(122, 155, 142, 0.1), transparent);
+            transition: left 0.6s ease;
+        }
+
+        .service-card:hover::before {
+            left: 100%;
+        }
+
+        .service-card:hover {
+            transform: translateY(-12px) scale(1.03);
+            box-shadow: 0 30px 70px rgba(0,0,0,0.15);
+        }
+
+        .service-image {
+            width: 100%;
+            height: 280px;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+
+        .service-card:hover .service-image {
+            transform: scale(1.1);
+        }
+
+        .service-content {
+            padding: 2.5rem;
+        }
+
+        .service-card h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1.2rem;
+            color: var(--navy);
+            transition: color 0.3s ease;
+        }
+
+        .service-card:hover h3 {
+            color: var(--sage-green);
+        }
+
+        .service-card p {
+            font-size: 0.98rem;
+            color: var(--soft-grey);
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+
+        .service-card ul {
+            list-style: none;
+            margin-bottom: 1.5rem;
+        }
+
+        .service-card ul li {
+            padding-left: 1.5rem;
+            margin-bottom: 0.7rem;
+            position: relative;
+            font-size: 0.95rem;
+            color: var(--charcoal);
+            transition: transform 0.3s ease;
+        }
+
+        .service-card:hover ul li {
+            transform: translateX(5px);
+        }
+
+        .service-card ul li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--sage-green);
+            font-weight: 600;
+        }
+
+        /* Approach Section */
+        .approach-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            align-items: center;
+            padding: 0;
+            background: var(--navy);
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .approach-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(122, 155, 142, 0.1) 0%, transparent 100%);
+            pointer-events: none;
+        }
+
+        .approach-image {
+            width: 100%;
+            height: 100%;
+            min-height: 650px;
+            object-fit: cover;
+            opacity: 0;
+            transform: scale(1.1);
+            transition: all 1s ease;
+        }
+
+        .approach-image.animate {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        .approach-content {
+            padding: 5rem;
+            opacity: 0;
+            transform: translateX(50px);
+            transition: all 1s ease 0.3s;
+        }
+
+        .approach-content.animate {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .approach-content h2 {
+            font-size: 2.8rem;
+            margin-bottom: 2rem;
+            color: white;
+        }
+
+        .approach-content p {
+            color: rgba(255,255,255,0.9);
+            margin-bottom: 1.8rem;
+            font-size: 1.05rem;
+            line-height: 1.9;
+        }
+
+        .approach-list {
+            list-style: none;
+            margin-bottom: 2.5rem;
+        }
+
+        .approach-list li {
+            padding-left: 2rem;
+            margin-bottom: 1rem;
+            position: relative;
+            font-size: 1rem;
+            color: rgba(255,255,255,0.95);
+            transition: transform 0.3s ease;
+        }
+
+        .approach-list li:hover {
+            transform: translateX(10px);
+        }
+
+        .approach-list li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: var(--sage-green);
+            font-weight: 600;
+            transition: transform 0.3s ease;
+        }
+
+        .approach-list li:hover::before {
+            transform: translateX(5px);
+        }
+
+        .cta-button-light {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            background: transparent;
+            color: white;
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            border: 2px solid white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-button-light::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: white;
+            transition: left 0.4s ease;
+            z-index: -1;
+        }
+
+        .cta-button-light:hover::before {
+            left: 0;
+        }
+
+        .cta-button-light:hover {
+            color: var(--navy);
+            transform: translateY(-3px);
+        }
+
+        /* About Section */
+        .about-section {
+            padding: 7rem 6%;
+            background: var(--cream);
+        }
+
+        .about-container {
+            display: grid;
+            grid-template-columns: 400px 1fr;
+            gap: 5rem;
+            max-width: 1300px;
+            margin: 0 auto;
+            align-items: start;
+        }
+
+        .about-image-wrapper {
+            position: sticky;
+            top: 120px;
+            opacity: 0;
+            transform: translateX(-50px);
+            transition: all 1s ease;
+        }
+
+        .about-image-wrapper.animate {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .about-image {
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
+            border-radius: 2px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+            transition: all 0.6s ease;
+        }
+
+        .about-image:hover {
+            transform: scale(1.05);
+            box-shadow: 0 30px 80px rgba(0,0,0,0.25);
+        }
+
+        .about-content {
+            opacity: 0;
+            transform: translateX(50px);
+            transition: all 1s ease 0.3s;
+        }
+
+        .about-content.animate {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .about-content h2 {
+            font-size: 3rem;
+            margin-bottom: 2rem;
+            color: var(--navy);
+        }
+
+        .about-content h3 {
+            font-size: 1.5rem;
+            margin-top: 3rem;
+            margin-bottom: 1rem;
+            color: var(--navy);
+        }
+
+        .about-content p {
+            color: var(--charcoal);
+            margin-bottom: 1.5rem;
+            font-size: 1.05rem;
+            line-height: 1.9;
+        }
+
+        .credentials {
+            background: var(--warm-beige);
+            padding: 2rem;
+            border-radius: 2px;
+            margin-top: 2rem;
+            transition: all 0.4s ease;
+        }
+
+        .credentials:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .credentials h4 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: var(--navy);
+        }
+
+        .credentials p {
+            font-size: 0.95rem;
+            margin-bottom: 0.5rem;
+        }
+
+        /* FAQs Section */
+        .faqs-section {
+            padding: 7rem 6%;
+            background: var(--warm-beige);
+        }
+
+        .faqs-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .faqs-section h2 {
+            font-size: 3rem;
+            margin-bottom: 3rem;
+            text-align: center;
+            color: var(--navy);
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+
+        .faqs-section h2.animate {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .faq-item {
+            background: white;
+            margin-bottom: 1.5rem;
+            border-radius: 2px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+
+        .faq-item.animate {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .faq-item:nth-child(2) { transition-delay: 0.1s; }
+        .faq-item:nth-child(3) { transition-delay: 0.2s; }
+        .faq-item:nth-child(4) { transition-delay: 0.3s; }
+        .faq-item:nth-child(5) { transition-delay: 0.4s; }
+        .faq-item:nth-child(6) { transition-delay: 0.5s; }
+
+        .faq-question {
+            padding: 1.8rem 2rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
+
+        .faq-question:hover {
+            background: var(--warm-beige);
+        }
+
+        .faq-question h3 {
+            font-size: 1.3rem;
+            font-weight: 500;
+            color: var(--navy);
+            transition: color 0.3s ease;
+        }
+
+        .faq-item:hover .faq-question h3 {
+            color: var(--sage-green);
+        }
+
+        .faq-icon {
+            font-size: 1.5rem;
+            color: var(--sage-green);
+            transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            font-weight: 300;
+        }
+
+        .faq-item.active .faq-icon {
+            transform: rotate(135deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease-out, padding 0.4s ease-out;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 500px;
+            padding: 0 2rem 2rem 2rem;
+        }
+
+        .faq-answer p {
+            color: var(--soft-grey);
+            line-height: 1.8;
+            font-size: 1rem;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: var(--sage-green);
+            color: white;
+            padding: 7rem 6%;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            animation: rotate 20s linear infinite;
+        }
+
+        .cta-section h2 {
+            font-size: 3.2rem;
+            margin-bottom: 1.5rem;
+            color: white;
+            position: relative;
+            z-index: 2;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+
+        .cta-section h2.animate {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .cta-section p {
+            max-width: 700px;
+            margin: 0 auto 3rem;
+            font-size: 1.1rem;
+            opacity: 0.95;
+            line-height: 1.9;
+            position: relative;
+            z-index: 2;
+        }
+
+        .cta-button-inverse {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            background: white;
+            color: var(--sage-green);
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            border: 2px solid white;
+            position: relative;
+            z-index: 2;
+        }
+
+        .cta-button-inverse:hover {
+            background: transparent;
+            color: white;
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--navy);
+            color: white;
+            padding: 5rem 6% 3rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 5rem;
+            margin-bottom: 3rem;
+            max-width: 1400px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .footer-section h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            color: white;
+        }
+
+        .footer-section p,
+        .footer-section a {
+            font-size: 0.95rem;
+            color: rgba(255,255,255,0.8);
+            text-decoration: none;
+            display: block;
+            margin-bottom: 0.8rem;
+            line-height: 1.7;
+            transition: all 0.3s ease;
+        }
+
+        .footer-section a:hover {
+            color: var(--sage-green);
+            transform: translateX(5px);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 3rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 0.9rem;
+            color: rgba(255,255,255,0.7);
+        }
+
+        .footer-bottom p {
+            margin-bottom: 0.5rem;
+        }
+
+        /* Enhanced Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInRight {
+            from {
+                opacity: 0;
+                transform: translateX(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes zoomIn {
+            from {
+                opacity: 0;
+                transform: scale(0.9);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        @keyframes slideInDiagonal {
+            from {
+                opacity: 0;
+                transform: translate(-50px, -50px);
+            }
+            to {
+                opacity: 1;
+                transform: translate(0, 0);
+            }
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0) rotate(0deg);
+            }
+            50% {
+                transform: translateY(-30px) rotate(5deg);
+            }
+        }
+
+        @keyframes rotate {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        /* Responsive Design */
+        @media (min-width: 1025px) {
+            .mobile-menu-overlay {
+                display: none;
+            }
+        }
+
+        @media (max-width: 1024px) {
+            .hamburger {
+                display: flex;
+            }
+
+            nav .nav-links {
+                display: none;
+            }
+
+            .hero,
+            .approach-section,
+            .about-container {
+                grid-template-columns: 1fr;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-content {
+                text-align: center;
+            }
+
+            .hero-content h1 {
+                font-size: 2.8rem;
+            }
+
+            .hero-content p {
+                max-width: 100%;
+            }
+
+            .hero-image {
+                height: 500px;
+            }
+
+            .approach-content {
+                padding: 3rem;
+            }
+
+            .about-container {
+                gap: 3rem;
+            }
+
+            .about-image-wrapper {
+                position: relative;
+                top: 0;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            nav {
+                padding: 1.5rem 4%;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero-content h1 {
+                font-size: 2.2rem;
+            }
+
+            h2 {
+                font-size: 2rem !important;
+            }
+
+            .services-header h2,
+            .about-content h2,
+            .faqs-section h2,
+            .cta-section h2 {
+                font-size: 2.2rem !important;
+            }
+
+            .approach-content {
+                padding: 2rem;
+            }
+
+            .hero::before {
+                width: 400px;
+                height: 400px;
+            }
+        }
+
+        /* Scroll Progress Bar */
+        .scroll-progress {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 0%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--sage-green), var(--navy));
+            z-index: 10000;
+            transition: width 0.1s ease;
+        }
+    </style>
+</head>
+<body>
+    <!-- Scroll Progress Bar -->
+    <div class="scroll-progress" id="scrollProgress"></div>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="logo">Dr. Maya Reynolds</div>
+        <ul class="nav-links">
+            <li><a href="#services">Services</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <div class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu-overlay" id="mobileMenu">
+        <ul class="nav-links">
+            <li><a href="#services" class="mobile-link">Services</a></li>
+            <li><a href="#about" class="mobile-link">About</a></li>
+            <li><a href="#contact" class="mobile-link">Contact</a></li>
+        </ul>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="subtitle">Licensed Clinical Psychologist</div>
+            <h1>Find Balance, Build Resilience, Reclaim Your Life</h1>
+            <div class="location">Therapy for High-Achieving Adults in Santa Monica, California</div>
+            <p>If you're feeling overwhelmed by anxiety, stress, or the lingering effects of past experiences, you're not alone. I help professionals, entrepreneurs, and creatives navigate life's challenges with compassionate, evidence-based therapy.</p>
+            <a href="#contact" class="cta-button">Schedule a Consultation</a>
+        </div>
+        <div class="hero-image-container">
+            <img src="../ASSIGNMENT/Dr. Maya Reynolds.png" alt="Professional woman in modern office - Santa Monica therapy" class="hero-image">
+        </div>
+    </section>
+
+    <!-- Intro Section -->
+    <section class="intro-section">
+        <h2>You Don't Have to Navigate Life's Challenges Alone</h2>
+        <p>Many of the adults I work with are high-achieving, thoughtful, and self-aware—but internally feel exhausted, stuck in overthinking, or emotionally on edge. You might appear "functional" on the outside while quietly struggling with constant worry, tension, difficulty sleeping, or a sense that you're always bracing for something to go wrong.</p>
+        <p>Others are navigating the impact of earlier life experiences that continue to affect their relationships, confidence, or sense of safety. Therapy can become a space to slow down, reconnect, and develop more sustainable ways of living and working.</p>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="services-header">
+            <h2>Specialized Therapy Services in Santa Monica</h2>
+            <p>I offer evidence-based, trauma-informed treatment tailored to your unique needs and goals.</p>
+        </div>
+        <div class="services-grid">
+            <div class="service-card">
+                <img src="../ASSIGNMENT/office1.jpeg" alt="Anxiety therapy Santa Monica - woman journaling peacefully" class="service-image">
+                <div class="service-content">
+                    <h3>Anxiety & Panic Therapy</h3>
+                    <p>I work with clients who experience persistent worry, panic attacks, difficulty sleeping, or a sense that they're always bracing for something to go wrong. My approach helps you understand both the emotional and physiological sides of what you're experiencing.</p>
+                    <ul>
+                        <li>Cognitive-behavioral therapy (CBT) techniques</li>
+                        <li>Managing constant worry and tension</li>
+                        <li>Breaking the cycle of overthinking</li>
+                        <li>Developing sustainable coping strategies</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="service-card">
+                <img src="https://images.unsplash.com/photo-1527689368864-3a821dbccc34?w=800&h=600&fit=crop&q=80" alt="Trauma therapy Santa Monica - EMDR treatment" class="service-image">
+                <div class="service-content">
+                    <h3>Trauma & EMDR Therapy</h3>
+                    <p>Trauma work is an important part of my practice. Whether you've experienced single-incident trauma or more complex, long-standing patterns, I use trauma-informed techniques including EMDR to help clients feel more regulated and safe in their daily lives.</p>
+                    <ul>
+                        <li>EMDR (Eye Movement Desensitization and Reprocessing)</li>
+                        <li>Single-incident and complex trauma treatment</li>
+                        <li>Stabilization and grounding techniques</li>
+                        <li>Building resilience and sense of safety</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="service-card">
+                <img src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=800&h=600&fit=crop&q=80" alt="Burnout therapy Santa Monica - professional taking break" class="service-image">
+                <div class="service-content">
+                    <h3>Burnout & Professional Stress</h3>
+                    <p>I frequently support clients dealing with professional burnout, perfectionism, and high internal pressure. Many are entrepreneurs, creatives, or professionals who feel disconnected from themselves after years of pushing through stress.</p>
+                    <ul>
+                        <li>Recognizing and addressing burnout patterns</li>
+                        <li>Managing perfectionism and high standards</li>
+                        <li>Work-life balance and boundary setting</li>
+                        <li>Sustainable approaches to productivity</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Approach Section -->
+    <section class="approach-section">
+        <img src="../ASSIGNMENT/office1.jpeg" alt="Dr. Maya Reynolds therapy office Santa Monica" class="approach-image">
+        <div class="approach-content">
+            <h2>My Approach to Therapy</h2>
+            <p>I take a warm, collaborative, and grounded approach to therapy. Sessions are structured enough to be supportive, while still leaving space for reflection and depth. I integrate evidence-based methods to help clients understand both the emotional and physiological sides of what they're experiencing.</p>
+            <p>My therapeutic approach includes:</p>
+            <ul class="approach-list">
+                <li>Cognitive-behavioral therapy (CBT) for practical skill-building</li>
+                <li>EMDR for trauma processing and integration</li>
+                <li>Trauma-informed techniques focused on safety and stabilization</li>
+                <li>Mind-body awareness and regulation strategies</li>
+            </ul>
+            <p>I believe therapy works best when clients feel respected, understood, and actively involved in the process. My goal is not just symptom relief, but helping clients develop insight, resilience, and a stronger relationship with themselves over time.</p>
+            <a href="#contact" class="cta-button-light">Learn More About Working Together</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <div class="about-container">
+            <div class="about-image-wrapper">
+                <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=800&h=1000&fit=crop&q=80" alt="Dr. Maya Reynolds, PsyD - Licensed Clinical Psychologist Santa Monica" class="about-image">
+            </div>
+            <div class="about-content">
+                <h2>About Dr. Maya Reynolds, PsyD</h2>
+                <p>I'm a licensed clinical psychologist based in Santa Monica, California, offering therapy for adults who feel overwhelmed by anxiety, stress, or the lingering effects of past experiences. Many of the people I work with are high-achieving, thoughtful, and self-aware—but internally feel exhausted, stuck in overthinking, or emotionally on edge.</p>
+                
+                <p>My work often focuses on anxiety, panic, trauma, and burnout. Clients frequently come to me feeling "functional" on the outside while quietly struggling with constant worry, tension in their body, difficulty sleeping, or a sense that they're always bracing for something to go wrong. Others are navigating the impact of earlier life experiences that continue to affect their relationships, confidence, or sense of safety.</p>
+
+                <h3>Working with Professionals and Creatives</h3>
+                <p>In addition to trauma and anxiety, I frequently support clients dealing with professional burnout, perfectionism, and high internal pressure. Many are entrepreneurs, creatives, or professionals who feel disconnected from themselves after years of pushing through stress. Therapy can become a space to slow down, reconnect, and develop more sustainable ways of living and working.</p>
+
+                <h3>Therapy Locations</h3>
+                <p>I offer both in-person therapy from my Santa Monica office and secure telehealth sessions for clients located in California. My office is a quiet, private space designed to feel calm and grounding, with natural light and a comfortable, uncluttered environment. Clients often share that the space itself helps them feel more at ease when they arrive.</p>
+
+                <div class="credentials">
+                    <h4>Professional Background</h4>
+                    <p><strong>Education:</strong> Doctor of Psychology (PsyD)</p>
+                    <p><strong>License:</strong> Licensed Clinical Psychologist in California</p>
+                    <p><strong>Specializations:</strong> Anxiety, Trauma, EMDR, Burnout, Professional Stress</p>
+                    <p><strong>Therapeutic Approaches:</strong> CBT, EMDR, Trauma-Informed Care</p>
+                </div>
+
+                <p>If you're looking for a therapist who combines practical tools with depth-oriented work—and who understands the realities of living and working in a fast-paced environment—I may be a good fit.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQs Section -->
+    <section class="faqs-section">
+        <div class="faqs-container">
+            <h2>Frequently Asked Questions</h2>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    <h3>Do you accept insurance for therapy services?</h3>
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>I am an out-of-network provider, which means I do not bill insurance directly. However, many clients are able to receive partial reimbursement from their insurance company for out-of-network mental health services. I can provide you with a superbill (detailed receipt) that you can submit to your insurance for potential reimbursement. I recommend contacting your insurance provider to understand your out-of-network benefits before beginning therapy.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <h3>What are your session rates and payment options?</h3>
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>My standard session rate is $250 for a 50-minute individual therapy session. Payment is due at the time of service, and I accept credit cards, debit cards, and HSA/FSA cards. I also offer a limited number of sliding scale spots for clients experiencing financial hardship. Please inquire during our initial consultation to discuss your specific situation.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <h3>Do you currently have openings for new clients?</h3>
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>My availability varies throughout the year. I currently have limited openings for new clients on Tuesday and Thursday afternoons. I also offer some early morning slots for telehealth sessions. If my schedule is full, I maintain a waitlist and will reach out when space becomes available. I also provide referrals to other qualified therapists in the Santa Monica area who may have more immediate availability.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <h3>Do you offer telehealth or in-person sessions?</h3>
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Yes, I offer both in-person therapy sessions at my Santa Monica office and secure telehealth sessions for clients anywhere in California. Many clients choose to alternate between in-person and telehealth depending on their schedule and preferences. In-person sessions are held at my private office located at 123th Street 45 W, Santa Monica, CA 90401, which is easily accessible with nearby parking.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <h3>What can I expect in the first therapy session?</h3>
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>The first session is an opportunity for us to get to know each other and determine if we're a good fit. I'll ask about what brought you to therapy, your current concerns, relevant background information, and what you're hoping to achieve. This is also your chance to ask questions about my approach, experience, and how we might work together. By the end of our first meeting, we'll discuss whether continuing therapy together makes sense and create an initial treatment plan tailored to your needs.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <h3>How long does therapy typically take?</h3>
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>The length of therapy varies depending on your individual needs and goals. Some clients find relief and achieve their goals within a few months of weekly sessions, while others benefit from longer-term work. I regularly check in about your progress and adjust our approach as needed. My goal is to help you develop the insight and skills you need to thrive independently, not to keep you in therapy indefinitely.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section id="contact" class="cta-section">
+        <h2>Ready to Take the First Step?</h2>
+        <p>If you're ready to work with a therapist who combines practical tools with depth-oriented work—and who understands the realities of living in a fast-paced environment—I invite you to reach out. Let's schedule a consultation to discuss how therapy can support you.</p>
+        <a href="mailto:contact@drmayareynolds.com" class="cta-button-inverse">Schedule Your Consultation</a>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Dr. Maya Reynolds, PsyD</h3>
+                <p>Licensed Clinical Psychologist</p>
+                <p>123th Street 45 W<br>Santa Monica, CA 90401</p>
+                <p>Phone: (310) 555-0123</p>
+                <p>Email: contact@drmayareynolds.com</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <a href="#services">Services</a>
+                <a href="#about">About Dr. Reynolds</a>
+                <a href="#contact">Contact</a>
+                <a href="#">Patient Portal</a>
+            </div>
+            <div class="footer-section">
+                <h3>Office Hours</h3>
+                <p>Monday - Thursday<br>9:00 AM - 6:00 PM</p>
+                <p>Friday<br>9:00 AM - 3:00 PM</p>
+                <p><br>Telehealth appointments available throughout California</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Dr. Maya Reynolds, PsyD. All Rights Reserved.</p>
+            <p>Privacy Policy | Disclaimer | Good Faith Estimate</p>
+        </div>
+    </footer>
+
+    <script>
+        // Hamburger Menu Toggle
+        const hamburger = document.getElementById('hamburger');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        hamburger.addEventListener('click', function() {
+            hamburger.classList.toggle('active');
+            mobileMenu.classList.toggle('active');
+            document.body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : 'auto';
+        });
+
+        // Close mobile menu when link is clicked
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                hamburger.classList.remove('active');
+                mobileMenu.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            });
+        });
+
+        // Smooth scrolling for all navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // FAQ accordion functionality
+        document.querySelectorAll('.faq-item').forEach(item => {
+            const question = item.querySelector('.faq-question');
+            question.addEventListener('click', function() {
+                const isActive = item.classList.contains('active');
+                
+                // Close all FAQ items
+                document.querySelectorAll('.faq-item').forEach(faq => {
+                    faq.classList.remove('active');
+                });
+                
+                // Open clicked item if it wasn't already open
+                if (!isActive) {
+                    item.classList.add('active');
+                }
+            });
+        });
+
+        // Scroll Progress Bar
+        window.addEventListener('scroll', () => {
+            const scrollProgress = document.getElementById('scrollProgress');
+            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrollPercentage = (scrollTop / scrollHeight) * 100;
+            scrollProgress.style.width = scrollPercentage + '%';
+        });
+
+        // Intersection Observer for scroll animations
+        const observerOptions = {
+            threshold: 0.15,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all animatable elements
+        document.querySelectorAll('.intro-section h2, .intro-section p, .services-header h2, .services-header p, .service-card, .approach-image, .approach-content, .about-image-wrapper, .about-content, .faqs-section h2, .faq-item, .cta-section h2').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Add hover effect to service cards images
+        document.querySelectorAll('.service-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.zIndex = '10';
+            });
+            card.addEventListener('mouseleave', function() {
+                this.style.zIndex = '1';
+            });
+        });
+
+        // Parallax effect for hero section
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const heroImage = document.querySelector('.hero-image-container');
+            if (heroImage && scrolled < window.innerHeight) {
+                heroImage.style.transform = `translateY(${scrolled * 0.3}px)`;
+            }
+        });
+    </script>
+</body>
+</html>
